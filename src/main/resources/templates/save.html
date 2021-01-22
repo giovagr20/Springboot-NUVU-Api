@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Personas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <br>
+    <h2>Agregar Persona</h2>
+    <form action="#" th:action="@{/save}" th:object="${person}"
+          method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre</label> <input type="text"
+            class="form-control" id="nombre" th:field="*{firstName}" name="nombre">
+        </div>
+        <input type="hidden" th:field="*{id}" name="id" id="id">
+        <div class="form-group">
+            <label for="nombre">Apellido</label> <input type="text"
+                   class="form-control" id="apellido" th:field="*{lastName}"
+                   name="apellido">
+        </div>
+        <div class="form-group">
+            <label for="nombre">Email</label>
+            <input type="text"
+                   class="form-control" id="email" th:field="*{email}" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Credit Card</label> <input type="text"
+                   class="form-control" id="creditcard" th:field="*{creditCard}"
+                   name="creditcard">
+        </div>
+        <button type="submit" class="mt-2 btn btn-success">Guardar</button>
+    </form>
+</div>
+</body>
+</html>
