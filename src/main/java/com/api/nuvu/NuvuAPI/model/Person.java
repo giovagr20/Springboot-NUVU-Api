@@ -3,31 +3,30 @@ package com.api.nuvu.NuvuAPI.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Person")
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="id")
+    private int id;
 
-    @Column
+    @Column(name="firstName")
     private String firstName;
 
-    @Column
+    @Column(name="lastName")
     private String lastName;
 
-    @Column
+    @Column(name="email")
     private String email;
 
-    @Column
+    @Column(name="creditCard")
     private String creditCard;
 
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

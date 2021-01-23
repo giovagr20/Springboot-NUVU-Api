@@ -8,13 +8,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonServiceAPI extends GenericServiceAPI<Person, Long> implements IPersonServiceAPI {
+public class PersonServiceAPI extends GenericServiceAPI<Person, Integer> implements IPersonServiceAPI {
 
     @Autowired
     private IPersonDAOAPI personDaoAPI;
 
     @Override
-    public CrudRepository<Person, Long> getDao() {
+    public CrudRepository<Person, Integer> getDao() {
         return personDaoAPI;
     }
 }

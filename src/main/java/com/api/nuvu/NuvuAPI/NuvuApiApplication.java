@@ -8,4 +8,5 @@ public class NuvuApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NuvuApiApplication.class, args);
 	}
+
 }

@@ -18,12 +18,12 @@ public class PersonController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("list", personServiceAPI.getAll());
+        model.addAttribute("list",personServiceAPI.getAll());
         return "index";
     }
 
     @GetMapping("/save/{id}")
-    public String showSave(@PathVariable("id") Long id, Model model){
+    public String showSave(@PathVariable("id") Integer id, Model model){
         if(id != null && id != 0) {
             model.addAttribute("person", personServiceAPI.get(id));
         } else {
@@ -39,7 +39,7 @@ public class PersonController {
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id, Model model) {
+    public String delete(@PathVariable Integer id, Model model) {
         personServiceAPI.delete(id);
         return "redirect:/";
     }
